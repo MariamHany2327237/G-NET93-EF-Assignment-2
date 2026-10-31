@@ -15,11 +15,20 @@ namespace G_NET93_EF_Assignment_2.Models
 
         [MaxLength(100)]
         [Required]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [MaxLength(150)]
         public string? CompanyName { get; set; }
 
         public bool IsVerified { get; set; }
+
+        #region Organizer Has Profile
+        public OrganizerProfile OrganizerProfile { get; set; } = null!;
+
+        #endregion
+
+        #region Organizer Creates Event
+        public ICollection<Event> Events { get; set; } = null!;
+        #endregion
     }
 }
